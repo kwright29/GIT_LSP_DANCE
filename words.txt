@@ -1,2 +1,0 @@
-Hello! Welcome to our trial run for LSP assignment number
-two. Hopefully our code outputs the correct thing, hello and goodbye!

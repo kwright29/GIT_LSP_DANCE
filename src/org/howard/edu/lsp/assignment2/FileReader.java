@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class FileReader {
+public class FileReader { 
 	public String readToString(String resource) throws FileNotFoundException {
 		URL url = getClass().getClassLoader().getResource(resource);
 		
