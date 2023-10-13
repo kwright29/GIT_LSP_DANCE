@@ -41,20 +41,26 @@ public class IntegerSet {
 	}
 	
 	//Returns largest item in the set; Throws a IntegerSetException if the set is empty
-	public int largest() {
-		// TODO throw IntegerSetException
+	public int largest() throws IntegerSetException {
+		if (this.set.isEmpty()) {
+			throw new IntegerSetException();
+		}
 		int max = this.set.get(0);	
 		for (int i = 1; i < this.set.size(); i++) {
 			if (this.set.get(i) > max) {
 				max = this.set.get(i);
 			}
 		}
+		
 		return max;
+		
 	}
 	
 	//Returns the smallest item in the set; Throws a IntegerSetException if the set is empty
-	public int smallest() {
-		// TODO throw IntegerSetException
+	public int smallest() throws IntegerSetException {
+		if (this.set.isEmpty()) {
+			throw new IntegerSetException();
+		}
 		int min = this.set.get(0);
 		for (int i = 1; i < this.set.size(); i++) {
 			if (this.set.get(i) < min) {
