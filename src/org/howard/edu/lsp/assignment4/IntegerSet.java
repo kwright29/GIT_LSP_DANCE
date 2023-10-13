@@ -69,5 +69,19 @@ public class IntegerSet {
 		}
 		return min;
 	}
+	
+	// Adds an item to the set or does nothing it already there	
+	public void add(int item) {
+		if (!this.set.contains(item)) {
+			this.set.add(item);		
+		}
+	}
+	
+	// Removes an item from the set or does nothing if not there
+	public void remove(int item) {
+		if (this.set.contains(item)) {
+			this.set.remove(item);
+		}
+	}
 
 }
