@@ -83,5 +83,38 @@ public class IntegerSet {
 			this.set.remove(item);
 		}
 	}
+	
+	// Set union
+	public void union(IntegerSet intSetb) {
+		for (int i = 0; i < intSetb.length(); i++) {
+			int item = this.set.get(i);
+			if (!this.set.contains(item)) {
+				this.set.add(item);		
+			}
+		}
+		// TODO return string of current set
+	}
+	
+	// Set intersection, all elements in s1 and s2
+	public void intersection(IntegerSet intSetb) {
+		for (int i = 0; i < this.set.size(); i++) {
+			int item = this.set.get(i);
+			if (!intSetb.contains(item)) {
+				this.set.remove(item);
+			}
+		}
+		// TODO return string of current set
+	}
+	
+	// Set difference
+	public void diff(IntegerSet intSetb) {
+		for (int i = 0; i < this.set.size(); i++) {
+			int item = this.set.get(i);
+			if (intSetb.contains(item)) {
+				this.set.remove(item);	}
+		}
+		// TODO return string of current set
+	}
+	
 
 }
