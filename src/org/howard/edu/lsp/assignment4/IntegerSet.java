@@ -7,7 +7,7 @@ public class IntegerSet {
 	private List<Integer> set = new ArrayList<Integer>();
 	
 	// Default Constructor
-	public IntegerSet() {	
+	public IntegerSet() {
 	}
 	
 	// Constructor if you want to pass in already initialized 
@@ -98,7 +98,7 @@ public class IntegerSet {
 	// Set intersection, all elements in s1 and s2
 	public void intersection(IntegerSet intSetb) {
 		for (int i = 0; i < this.set.size(); i++) {
-			int item = this.set.get(i);
+			int item = intSetb.set.get(i);
 			if (!intSetb.contains(item)) {
 				this.set.remove(item);
 			}
