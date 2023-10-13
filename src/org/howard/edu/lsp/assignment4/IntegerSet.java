@@ -14,4 +14,54 @@ public class IntegerSet {
 	public IntegerSet(ArrayList<Integer> set) {
 		this.set = set;
 	}
+	
+	//Clears the internal representation of the set
+	public void clear() {
+		this.set.clear();
+	}
+	
+	//Returns length of the set
+	public int length() {
+		return this.set.size();
+	}
+	
+	/*
+     * Returns true if the 2 sets are equal, false otherwise;
+     * Two sets are equal if they contain all of the same values in ANY order.  This overrides
+     * the equal method from the Object class.
+     */
+	public boolean equals(Object o) {
+		//TODO implement method
+		return false;
+	}
+	
+	//Returns true if the set contains the value
+	public boolean contains(int value) {
+		return this.set.contains(value);
+	}
+	
+	//Returns largest item in the set; Throws a IntegerSetException if the set is empty
+	public int largest() {
+		// TODO throw IntegerSetException
+		int max = this.set.get(0);	
+		for (int i = 1; i < this.set.size(); i++) {
+			if (this.set.get(i) > max) {
+				max = this.set.get(i);
+			}
+		}
+		return max;
+	}
+	
+	//Returns the smallest item in the set; Throws a IntegerSetException if the set is empty
+	public int smallest() {
+		// TODO throw IntegerSetException
+		int min = this.set.get(0);
+		for (int i = 1; i < this.set.size(); i++) {
+			if (this.set.get(i) < min) {
+				min = this.set.get(i);
+			}
+		}
+		return min;
+	}
+
 }
