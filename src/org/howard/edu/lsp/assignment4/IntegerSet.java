@@ -80,7 +80,8 @@ public class IntegerSet {
 	// Removes an item from the set or does nothing if not there
 	public void remove(int item) {
 		if (this.set.contains(item)) {
-			this.set.remove(item);
+			int index = this.set.indexOf(item);
+			this.set.remove(index);
 		}
 	}
 	
@@ -96,11 +97,13 @@ public class IntegerSet {
 	
 	// Set intersection, all elements in s1 and s2
 	public void intersection(IntegerSet intSetb) {
-		for (int i = 0; i < this.set.size(); i++) {
-			int item = intSetb.set.get(i);
+		int length = this.length();
+		while (length > 0) {
+			int item = this.set.get(0);
 			if (!intSetb.contains(item)) {
-				this.set.remove(item);
+				this.remove(item);
 			}
+			length--;
 		}
 	}
 	
@@ -109,7 +112,7 @@ public class IntegerSet {
 		for (int i = 0; i < this.set.size(); i++) {
 			int item = this.set.get(i);
 			if (intSetb.contains(item)) {
-				this.set.remove(item);	}
+				this.remove(item);	}
 		}
 	}
 	
@@ -124,7 +127,7 @@ public class IntegerSet {
 		}
 		
 		while (length > 0) {
-			this.set.remove(0);
+			this.set.remove(0); // removing index 0 
 			length--;
 		}
 	}
