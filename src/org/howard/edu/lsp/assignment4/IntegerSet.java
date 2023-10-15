@@ -98,10 +98,13 @@ public class IntegerSet {
 	// Set intersection, all elements in s1 and s2
 	public void intersection(IntegerSet intSetb) {
 		int length = this.length();
+		int index = 0;
 		while (length > 0) {
-			int item = this.set.get(0);
+			int item = this.set.get(index);
 			if (!intSetb.contains(item)) {
 				this.remove(item);
+			} else {
+				index++;
 			}
 			length--;
 		}
@@ -109,10 +112,16 @@ public class IntegerSet {
 	
 	// Set difference
 	public void diff(IntegerSet intSetb) {
-		for (int i = 0; i < this.set.size(); i++) {
-			int item = this.set.get(i);
+		int length = this.length();
+		int index = 0;
+		while (length > 0) {
+			int item = this.set.get(index);
 			if (intSetb.contains(item)) {
-				this.remove(item);	}
+				this.remove(item);
+			} else {
+				index++;
+			}
+			length--;
 		}
 	}
 	
