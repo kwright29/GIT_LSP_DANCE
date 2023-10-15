@@ -116,5 +116,22 @@ public class IntegerSet {
 		// TODO return string of current set
 	}
 	
+	// Set complement, all elements not in s1
+	public void complement(IntegerSet intSetb) {
+		int length = this.set.size();
+		for (int i = 0; i < intSetb.length(); i++) {
+			int item = intSetb.set.get(i);
+			if (!this.set.contains(item)) {
+				this.set.add(item);
+			}
+		}
+		
+		while (length > 0) {
+			this.set.remove(0);
+			length--;
+		}
+		// TODO return string of current set
+	}
+	
 
 }
