@@ -87,12 +87,11 @@ public class IntegerSet {
 	// Set union
 	public void union(IntegerSet intSetb) {
 		for (int i = 0; i < intSetb.length(); i++) {
-			int item = this.set.get(i);
+			int item = intSetb.set.get(i);
 			if (!this.set.contains(item)) {
 				this.set.add(item);		
 			}
 		}
-		// TODO return string of current set
 	}
 	
 	// Set intersection, all elements in s1 and s2
@@ -103,7 +102,6 @@ public class IntegerSet {
 				this.set.remove(item);
 			}
 		}
-		// TODO return string of current set
 	}
 	
 	// Set difference
@@ -113,7 +111,6 @@ public class IntegerSet {
 			if (intSetb.contains(item)) {
 				this.set.remove(item);	}
 		}
-		// TODO return string of current set
 	}
 	
 	// Set complement, all elements not in s1
@@ -130,8 +127,14 @@ public class IntegerSet {
 			this.set.remove(0);
 			length--;
 		}
-		// TODO return string of current set
 	}
 	
+	boolean isEmpty() {
+		return this.set.isEmpty();
+	}
+	
+	public String toString() {
+		return this.set.toString();
+	}
 
 }
