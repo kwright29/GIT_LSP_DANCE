@@ -59,6 +59,13 @@ public class IntegerSetTest {
 	}
 	
 	@Test
+	@DisplayName("test equal")
+	public void testEqual() {
+		assertTrue(set3.equals(set4) == true);
+		assertTrue(set2.equals(set3) == false);
+	}
+	
+	@Test
 	@DisplayName("test contains")
 	public void testContains() {
 		assertEquals(set1.contains(6), false);

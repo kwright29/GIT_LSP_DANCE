@@ -51,8 +51,25 @@ public class IntegerSet {
 	 * @return a boolean indicating if the sets are equal or not.
 	 */
 	public boolean equals(Object o) {
-		//TODO implement method
-		return false;
+		if (!(o instanceof IntegerSet)) {
+			return false;
+	    }
+		
+		IntegerSet setb = (IntegerSet) o;
+		
+		if (this.set.size() != setb.length()) {
+			return false;
+		}
+		
+		for (int i = 0; i < this.set.size(); i++) {
+			int item = this.set.get(i);
+			if (!setb.contains(item)) {
+				return false;
+			}
+		}
+		
+		return true;
+
 	}
 	
 	/**
