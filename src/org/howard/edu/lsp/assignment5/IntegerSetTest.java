@@ -176,8 +176,8 @@ public class IntegerSetTest {
 	@DisplayName("test difference")
 	public void testDiff() {
 		//testing difference with an empty set
-		set0.diff(set2);
-		assertEquals(set0.toString(), "[3, 6, 9]");
+		set2.diff(set0);
+		assertEquals(set2.toString(), "[3, 6, 9]");
 		
 		set1.diff(set2);
 		assertEquals(set1.toString(), "[1, 2]");
