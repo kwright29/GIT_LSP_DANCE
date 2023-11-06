@@ -60,6 +60,12 @@ public class IntegerSetTest {
 	@DisplayName("test length")
 	public void testLength() {
 		assertEquals(set1.length(), 3);
+		
+		//removing an element and checking length
+		set1.remove(2);
+		assertEquals(set1.length(), 2);
+		
+		//checking length of empty set
 		assertEquals(set0.length(), 0);
 	}
 	
@@ -75,6 +81,7 @@ public class IntegerSetTest {
 	public void testContains() {
 		assertEquals(set1.contains(6), false);
 		assertEquals(set1.contains(1), true);
+		assertEquals(set0.contains(0), false);
 	}
 	
 	@Test
@@ -123,6 +130,10 @@ public class IntegerSetTest {
 	@Test
 	@DisplayName("test remove")
 	public void testRemove() {
+		//removing from an empty set-- does nothing
+		set0.remove(34);
+		assertEquals(set0.toString(), "[]");
+		
 		set2.remove(6);
 		assertEquals(set2.toString(), "[3, 9]");
 		
@@ -140,6 +151,10 @@ public class IntegerSetTest {
 		//unionizing with an empty set
 		set0.union(set3);
 		assertEquals(set0.toString(), "[4, 8, 12]");
+		
+		//unionizing with two equal sets
+		set3.union(set4);
+		assertEquals(set3.toString(), "[4, 8, 12]");
 	}
 	
 	@Test
@@ -151,11 +166,19 @@ public class IntegerSetTest {
 		//checking two sets that have no alike elements
 		set2.intersection(set3);
 		assertEquals(set2.toString(), "[]");
+		
+		//intersection with two equal sets
+		set3.intersection(set4);
+		assertEquals(set3.toString(), "[4, 8, 12]");
 	}
 	
 	@Test
 	@DisplayName("test difference")
 	public void testDiff() {
+		//testing difference with an empty set
+		set0.diff(set2);
+		assertEquals(set0.toString(), "[3, 6, 9]");
+		
 		set1.diff(set2);
 		assertEquals(set1.toString(), "[1, 2]");
 		
