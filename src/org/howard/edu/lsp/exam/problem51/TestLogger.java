@@ -1,6 +1,7 @@
 package org.howard.edu.lsp.exam.problem51;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 
 
 import org.junit.jupiter.api.BeforeEach;
@@ -32,8 +33,8 @@ public class TestLogger {
 	@Test
 	@DisplayName("test log instances")
 	public void test_logger_instances() {
-		assertEquals(logger, logger1);
-		assertEquals(logger1, logger2);
+		assertSame(logger, logger1);
+		assertSame(logger1, logger2);
 	}
 
 }
